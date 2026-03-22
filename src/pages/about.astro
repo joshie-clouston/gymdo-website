@@ -4,76 +4,147 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const TRIAL_URL = 'https://gymdo-staff-app-main-yzbyzu.laravel.cloud/register';
 const DEMO_EMAIL = 'josh@cmdsoftware.com.au';
+
+const icp = [
+  {
+    yes: true,
+    text: 'You own or run a BJJ academy — pure BJJ, or BJJ as your main discipline',
+  },
+  {
+    yes: true,
+    text: 'You\'re currently on spreadsheets, Mindbody, Glofox, Gymdesk, or Kicksite — and it\'s not working for you',
+  },
+  {
+    yes: true,
+    text: 'You care about your members\' belt progression and want objective data to back your promotion decisions',
+  },
+  {
+    yes: true,
+    text: 'You\'ve lost members you wish you\'d known were drifting',
+  },
+  {
+    yes: true,
+    text: 'You\'d rather be coaching than chasing failed payments',
+  },
+  {
+    yes: false,
+    text: 'You run a pure fitness gym with no grappling component — GymDō is built around BJJ, and it shows',
+  },
+];
 ---
 <BaseLayout
-  title="About - GymDō"
-  description="GymDō was built for BJJ academies by someone who trains. Flat pricing, no platform percentage, and features designed around how BJJ gyms actually operate."
+  title="About GymDō - Built by a purple belt who ran a gym"
+  description="GymDō was built by a purple belt software engineer who bought and grew a gym from 23 to 153 members. He experienced the admin pain firsthand. So he built the fix."
 >
+  <!-- Hero -->
   <section class="section bg-[#0c2d4e] relative overflow-hidden">
     <div class="container relative" data-animate="fade-up">
       <div class="max-w-3xl">
-        <span class="badge mb-4" style="background:rgba(34,211,238,0.12);color:#67e8f9;border-color:rgba(34,211,238,0.2);">Our story</span>
-        <h1 class="text-5xl md:text-6xl font-black text-white mb-6">Built from the mat up</h1>
+        <span class="badge mb-4" style="background:rgba(34,211,238,0.12);color:#67e8f9;border-color:rgba(34,211,238,0.2);">The founder</span>
+        <h1 class="text-5xl md:text-6xl font-black text-white mb-6">
+          Built by someone who's been on your mats — and behind your admin desk.
+        </h1>
         <p class="text-slate-300 text-xl leading-relaxed">
-          GymDō is gym management software built by people who love BJJ, for the academies that deserve better than generic platforms and revenue-share pricing.
+          GymDō exists because the person who built it ran a gym, felt every one of these problems, and decided to do something about it.
         </p>
       </div>
     </div>
   </section>
 
+  <!-- Founder story -->
   <section class="section bg-white">
     <div class="container">
       <div class="max-w-3xl mx-auto" data-animate="fade-up">
-        <h2 class="text-4xl font-black text-[#0c2d4e] mb-8">Why we built this</h2>
-        <div class="space-y-6 text-slate-500 text-lg leading-relaxed">
+        <div class="space-y-6 text-slate-600 text-lg leading-relaxed">
           <p>
-            BJJ gym software is broken. Platforms like Mindbody and Glofox were built for yoga studios and general fitness gyms. They have been bolted onto BJJ academies because there was nothing better.
+            My name is Josh. I'm a purple belt in Brazilian Jiu-Jitsu and a software engineer. I also bought a gym — a CrossFit affiliate with 23 members — and grew it to 153 members before selling it.
           </p>
           <p>
-            The result is clunky software that doesn't understand belt promotions, doesn't track the attendance signals that matter for BJJ retention, and charges a percentage of your membership revenue on top of a monthly fee.
+            I know exactly what it feels like to be the coach, the receptionist, the billing department, and the IT support desk all at once. I've chased failed payments. I've built spreadsheets to track belt time because nothing else did it. I've had members go quiet and only realised when the cancellation email arrived.
           </p>
           <p>
-            GymDō is purpose-built for Brazilian Jiu-Jitsu. Belt tracking follows IBJJF standards. Retention scoring reflects how BJJ members actually drift. Pricing is flat because we grow when your gym grows, not when you collect dues.
+            When I went looking for software that actually understood how a grappling academy runs — the belt system, the attendance patterns that matter for BJJ specifically, the flat-fee pricing that doesn't take a cut of your hard-earned memberships — I couldn't find it. Everything was built for yoga studios, CrossFit boxes, or generic fitness gyms, then bolted onto BJJ academies as an afterthought.
+          </p>
+          <p class="font-semibold text-[#0c2d4e]">
+            So I built it.
           </p>
           <p>
-            We're starting with a pilot program in Queensland with five BJJ academies. If you're running a gym on spreadsheets, Kicksite, or generic software, we'd love to have a conversation.
+            GymDō is the software I wish existed when I was running a gym. Every feature comes from a real problem I lived. The IBJJF-aligned belt tracking, the daily member health scores, the automatic billing — none of it is theoretical. It's the direct result of knowing exactly what breaks when you're trying to run an academy on tools that were never designed for it.
+          </p>
+          <p>
+            I'm a software engineer with a black belt in the problem. That combination makes it very hard to compete with me on this.
+          </p>
+        </div>
+
+        <div class="mt-12 p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <p class="text-slate-500 text-sm">
+            <span class="font-semibold text-[#0c2d4e]">Josh Clouston</span> — Purple belt, software engineer, former gym owner. Gold Coast, Queensland.
+            Questions? Email directly: <a href={`mailto:${DEMO_EMAIL}`} class="text-[#0891b2] hover:underline">{DEMO_EMAIL}</a>
           </p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ICP — who this is for -->
   <section class="section bg-slate-50">
+    <div class="container">
+      <div class="max-w-2xl mx-auto text-center mb-12" data-animate="fade-up">
+        <span class="badge badge-navy mb-4">Who this is for</span>
+        <h2 class="text-4xl font-black text-[#0c2d4e] mb-4">
+          GymDō is built for one specific person.
+        </h2>
+        <p class="text-slate-500 text-lg">
+          The BJJ academy owner who loves the sport, hates the admin, and can't find software that understands both. If that's you, keep reading.
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto space-y-3" data-animate="stagger">
+        {icp.map(item => (
+          <div class={`flex items-start gap-4 p-4 rounded-xl border ${item.yes ? 'bg-white border-slate-200' : 'bg-amber-50 border-amber-100'}`}>
+            <span class={`text-lg font-bold flex-shrink-0 mt-0.5 ${item.yes ? 'text-emerald-500' : 'text-amber-500'}`}>
+              {item.yes ? '✓' : '→'}
+            </span>
+            <p class={`text-sm leading-relaxed ${item.yes ? 'text-slate-600' : 'text-amber-700'}`}>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section bg-white">
     <div class="container">
       <div class="max-w-2xl mx-auto text-center mb-12" data-animate="fade-up">
         <h2 class="text-4xl font-black text-[#0c2d4e] mb-4">What we stand for</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto" data-animate="stagger">
         <div class="card">
-          <h3 class="text-[#0c2d4e] font-bold mb-2">No platform cut</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Flat monthly fee. GymDō doesn't take a platform percentage on top of your revenue. Standard Stripe processing applies, same as anywhere.</p>
+          <h3 class="text-[#0c2d4e] font-bold mb-2">BJJ-first, always</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Every feature exists because a BJJ gym owner needed it. Not because a product manager thought it would look good on a pricing page. If it doesn't belong on the mat, it doesn't belong in GymDō.</p>
         </div>
         <div class="card">
-          <h3 class="text-[#0c2d4e] font-bold mb-2">BJJ-first</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Every feature is designed around how BJJ academies operate. Not adapted from a general gym template.</p>
+          <h3 class="text-[#0c2d4e] font-bold mb-2">No platform cut</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Flat monthly fee. GymDō doesn't take a percentage of your membership revenue. You built those relationships. That revenue is yours. Standard Stripe processing applies, same as any platform.</p>
         </div>
         <div class="card">
           <h3 class="text-[#0c2d4e] font-bold mb-2">Founder-direct</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">When you email us with a question or feature request, you're talking to the person who built it.</p>
+          <p class="text-slate-500 text-sm leading-relaxed">When you email with a question or a feature request, you're talking directly to the person who built it — someone who has run a gym and trained BJJ. Not a support bot. Not a ticket queue.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="section bg-[#0c2d4e]">
     <div class="container text-center" data-animate="fade-up">
-      <h2 class="text-4xl font-black text-white mb-4">Join the pilot</h2>
+      <h2 class="text-4xl font-black text-white mb-4">Let's talk about your academy</h2>
       <p class="text-slate-300 mb-8 max-w-xl mx-auto">
-        We're onboarding BJJ academies now. 30-day free trial, and if you're not happy in the first 30 days of billing, we'll refund you.
+        Start a 30-day free trial and see how it fits. Or email me directly and I'll walk you through it personally — one gym owner to another.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href={TRIAL_URL} class="btn btn-primary btn-lg">Start free trial</a>
-        <a href={`mailto:${DEMO_EMAIL}`} class="btn btn-outline-white btn-lg">Get in touch</a>
+        <a href={`mailto:${DEMO_EMAIL}?subject=GymDō — let's talk`} class="btn btn-outline-white btn-lg">Email Josh directly</a>
       </div>
     </div>
   </section>
