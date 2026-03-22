@@ -1,0 +1,66 @@
+---
+const currentYear = new Date().getFullYear();
+
+const links = {
+  Product: [
+    { label: 'Features', href: '/features' },
+    { label: 'Pricing', href: '/pricing' },
+    { label: 'Belt Tracking', href: '/features/belt-tracking' },
+    { label: 'Member Retention', href: '/features/retention' },
+  ],
+  Company: [
+    { label: 'About', href: '/about' },
+    { label: 'Contact', href: '/contact' },
+  ],
+  Legal: [
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Use', href: '/terms' },
+  ],
+};
+---
+<footer class="border-t border-white/5 bg-zinc-950">
+  <div class="container section-sm">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+      <!-- Brand -->
+      <div class="lg:col-span-2">
+        <a href="/" class="flex items-center gap-2 font-bold text-xl tracking-tight mb-4 inline-flex">
+          <span class="text-red-500">GymD</span><span class="text-white">o</span>
+        </a>
+        <p class="text-zinc-400 text-sm leading-relaxed max-w-xs">
+          Gym management built from the mat up. Made for BJJ academies, by people who train.
+        </p>
+        <div class="mt-4">
+          <span class="badge badge-green">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-400 inline-block"></span>
+            30-day free trial
+          </span>
+        </div>
+      </div>
+
+      <!-- Links -->
+      {Object.entries(links).map(([category, items]) => (
+        <div>
+          <h4 class="text-xs font-semibold tracking-widest uppercase text-zinc-500 mb-4">{category}</h4>
+          <ul class="space-y-3">
+            {items.map(item => (
+              <li>
+                <a href={item.href} class="text-sm text-zinc-400 hover:text-white transition-colors">
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-zinc-500">
+        &copy; {currentYear} GymDo. ABN to be updated. All rights reserved.
+      </p>
+      <p class="text-xs text-zinc-600">
+        Built from the mat up. Gold Coast, Australia.
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,22 @@
+# GymDo
+
+> BJJ gym management software built from the mat up. Flat pricing, no revenue share, 30-day free trial.
+
+GymDo is a gym management platform built specifically for Brazilian Jiu-Jitsu academies. It provides belt progression tracking (IBJJF-aligned), member retention scoring, class scheduling and booking, Stripe-powered billing, and a native mobile app for members.
+
+Pricing is flat monthly, from $79/mo. No revenue share. No percentage of membership revenue. 30-day free trial, 30-day money back guarantee.
+
+## Pages
+
+- [Home](https://gymdo.app/): Overview, features, pricing, and free trial CTA
+- [Features](https://gymdo.app/features): Full feature list for BJJ gym management
+- [Belt Tracking](https://gymdo.app/features/belt-tracking): IBJJF-aligned belt progression tracking
+- [Member Retention](https://gymdo.app/features/retention): Risk scoring and churn prevention
+- [Pricing](https://gymdo.app/pricing): Flat monthly pricing tiers, FAQ
+- [About](https://gymdo.app/about): Founder story and mission
+
+## Optional
+
+- [Contact](https://gymdo.app/contact): Contact information
+- [Privacy Policy](https://gymdo.app/privacy): Privacy policy
+- [Terms of Use](https://gymdo.app/terms): Terms of use

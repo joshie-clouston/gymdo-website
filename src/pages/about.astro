@@ -1,0 +1,88 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const TRIAL_URL = 'https://gymdo-staff-app-main-yzbyzu.laravel.cloud/register';
+---
+<BaseLayout
+  title="About - GymDo"
+  description="GymDo was built by a software engineer who trains BJJ. Flat pricing, no revenue share, and features designed around how BJJ academies actually operate."
+>
+  <!-- Hero -->
+  <section class="section bg-black relative overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#27272a33_1px,transparent_1px),linear-gradient(to_bottom,#27272a33_1px,transparent_1px)] bg-[size:64px_64px]" aria-hidden="true"></div>
+    <div class="container relative" data-animate="fade-up">
+      <div class="max-w-3xl">
+        <span class="badge badge-red mb-4">About</span>
+        <h1 class="text-5xl md:text-6xl font-black text-white mb-6">
+          Built from the mat up
+        </h1>
+        <p class="text-zinc-400 text-xl leading-relaxed">
+          GymDo is gym management software built by someone who trains BJJ, for the gyms that deserve better than generic software and revenue-share pricing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="section bg-zinc-950">
+    <div class="container">
+      <div class="max-w-3xl mx-auto" data-animate="fade-up">
+        <h2 class="text-4xl font-black text-white mb-8">Why we built this</h2>
+
+        <div class="space-y-6 text-zinc-400 text-lg leading-relaxed">
+          <p>
+            The gym management software market is broken. Platforms like Mindbody and Glofox were built for yoga studios and general fitness. They've been bolted onto BJJ academies because there was nothing better.
+          </p>
+          <p>
+            The result is clunky software that doesn't understand belt promotions, doesn't track the signals that matter for BJJ retention, and charges a percentage of your membership revenue on top of a monthly fee. It's not built for BJJ. It's built to extract as much value as possible from gyms that didn't have a choice.
+          </p>
+          <p>
+            GymDo is different. It's purpose-built for Brazilian Jiu-Jitsu academies. Belt tracking follows IBJJF standards. Retention scoring is built around how BJJ members actually drift. Pricing is flat because we make money when your gym grows, not when you collect membership dues.
+          </p>
+          <p>
+            We're starting with a pilot program in Queensland with 5 BJJ academies. If you're running a gym on spreadsheets, Kicksite, or generic software that doesn't understand your sport, we'd love to have you in the pilot.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section bg-black">
+    <div class="container">
+      <div class="max-w-2xl mx-auto text-center mb-12" data-animate="fade-up">
+        <h2 class="text-4xl font-black text-white mb-4">What we stand for</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto" data-animate="stagger">
+        <div class="card">
+          <div class="text-2xl mb-3">No revenue share</div>
+          <p class="text-zinc-400 text-sm leading-relaxed">We charge a flat monthly fee. We don't take a percentage of your membership revenue. Your pricing is your business.</p>
+        </div>
+        <div class="card">
+          <div class="text-2xl mb-3">BJJ-first</div>
+          <p class="text-zinc-400 text-sm leading-relaxed">We don't build features for yoga studios and then port them to BJJ. Every feature is designed around how BJJ academies operate.</p>
+        </div>
+        <div class="card">
+          <div class="text-2xl mb-3">Founder-direct</div>
+          <p class="text-zinc-400 text-sm leading-relaxed">When you email us with a question or a feature request, you're talking to the person who built it. No support ticket queue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-zinc-950">
+    <div class="container text-center" data-animate="fade-up">
+      <h2 class="text-4xl font-black text-white mb-4">Join the pilot</h2>
+      <p class="text-zinc-400 mb-8 max-w-xl mx-auto">
+        We're onboarding BJJ academies now. 30-day free trial, and if you're not happy in the first 30 days of billing, we'll refund you.
+      </p>
+      <a href={TRIAL_URL} class="btn btn-primary btn-lg">Start free trial</a>
+      <p class="mt-4 text-sm text-zinc-500">
+        Or email <a href="mailto:josh@cmdsoftware.com.au" class="hover:text-white transition-colors">josh@cmdsoftware.com.au</a> with any questions.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

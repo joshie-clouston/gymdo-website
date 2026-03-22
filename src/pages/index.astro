@@ -1,0 +1,362 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import OrgSchema from '../components/schema/OrgSchema.astro';
+
+const TRIAL_URL = 'https://gymdo-staff-app-main-yzbyzu.laravel.cloud/register';
+
+const features = [
+  {
+    title: 'Belt progression tracking',
+    description: 'IBJJF-aligned promotion eligibility. Know exactly who is ready to grade - belt by belt, stripe by stripe.',
+  },
+  {
+    title: 'Member retention scoring',
+    description: 'AI-powered risk scores flag members before they go quiet. Reach out before they cancel, not after.',
+  },
+  {
+    title: 'Class scheduling and booking',
+    description: 'Timetable management, member booking app, real-time attendance tracking. No phone calls.',
+  },
+  {
+    title: 'Membership and billing',
+    description: 'Stripe-powered recurring billing, membership pauses, cancellation flows. Your revenue, automated.',
+  },
+  {
+    title: 'Member app (iOS and Android)',
+    description: 'Members book classes, track their own belt progress, and manage memberships from their phone.',
+  },
+  {
+    title: 'Real-time analytics dashboard',
+    description: 'MRR, attendance trends, belt distribution, and retention rates. Know your gym at a glance.',
+  },
+];
+---
+<BaseLayout
+  title="GymDo - BJJ Gym Management Built From The Mat Up"
+  description="GymDo is gym management software built for BJJ academies. Belt tracking, member retention, class scheduling, and billing. Flat pricing, no revenue share, 30-day free trial."
+>
+  <OrgSchema slot="structured-data" />
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-black pt-16 pb-24 md:pt-24 md:pb-32">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#27272a33_1px,transparent_1px),linear-gradient(to_bottom,#27272a33_1px,transparent_1px)] bg-[size:64px_64px]" aria-hidden="true"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-red-600/10 blur-[120px] rounded-full" aria-hidden="true"></div>
+
+    <div class="container relative">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 mb-6" data-animate="fade-in">
+          <span class="badge badge-red">New</span>
+          <span class="text-sm text-zinc-400">30-day money back guarantee</span>
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight" data-animate="fade-up">
+          Gym management<br />
+          <span class="text-red-500">built from the mat up</span>
+        </h1>
+
+        <p class="text-xl text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed" data-animate="fade-up">
+          Stop losing members to silence. GymDo gives BJJ academies belt tracking, retention scoring, and a member app at a flat price with zero revenue share.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center" data-animate="fade-up">
+          <a href={TRIAL_URL} class="btn btn-primary btn-lg">
+            Start 30-day free trial
+          </a>
+          <a href="/pricing" class="btn btn-secondary btn-lg">
+            See pricing
+          </a>
+        </div>
+
+        <p class="mt-4 text-xs text-zinc-600">No credit card required. No lock-in. Cancel anytime.</p>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20 max-w-3xl mx-auto" data-animate="stagger">
+        <div class="text-center p-6 rounded-xl border border-white/5 bg-white/[0.02]">
+          <div class="text-3xl font-black text-white mb-1">$0</div>
+          <div class="text-xs text-zinc-500 uppercase tracking-wider">Revenue share</div>
+        </div>
+        <div class="text-center p-6 rounded-xl border border-white/5 bg-white/[0.02]">
+          <div class="text-3xl font-black text-white mb-1">30 days</div>
+          <div class="text-xs text-zinc-500 uppercase tracking-wider">Free trial</div>
+        </div>
+        <div class="text-center p-6 rounded-xl border border-white/5 bg-white/[0.02]">
+          <div class="text-3xl font-black text-white mb-1">30-day</div>
+          <div class="text-xs text-zinc-500 uppercase tracking-wider">Money back</div>
+        </div>
+        <div class="text-center p-6 rounded-xl border border-white/5 bg-white/[0.02]">
+          <div class="text-3xl font-black text-white mb-1">Flat</div>
+          <div class="text-xs text-zinc-500 uppercase tracking-wider">Pricing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="section bg-zinc-950">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center mb-16" data-animate="fade-up">
+        <span class="badge badge-red mb-4">The problem</span>
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+          Most academies are losing members they didn't know were leaving
+        </h2>
+        <p class="text-zinc-400 text-lg leading-relaxed">
+          The average BJJ gym loses 30-40% of members per year. Not from injury, not from life, but from drift. Missed classes, no follow-up, no visibility. By the time you notice, they've cancelled.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto" data-animate="stagger">
+        <div class="card text-center">
+          <div class="text-5xl font-black text-red-500 mb-3">30-40%</div>
+          <p class="text-zinc-300 font-semibold mb-2">Annual member turnover</p>
+          <p class="text-zinc-500 text-sm">Industry average for martial arts gyms</p>
+        </div>
+        <div class="card text-center">
+          <div class="text-5xl font-black text-red-500 mb-3">$2,100+</div>
+          <p class="text-zinc-300 font-semibold mb-2">Lifetime value per member</p>
+          <p class="text-zinc-500 text-sm">At $140/mo over 15 months average tenure</p>
+        </div>
+        <div class="card text-center">
+          <div class="text-5xl font-black text-red-500 mb-3">80%</div>
+          <p class="text-zinc-300 font-semibold mb-2">Of churn is preventable</p>
+          <p class="text-zinc-500 text-sm">With early intervention and genuine follow-up</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section bg-black">
+    <div class="container">
+      <div class="max-w-2xl mx-auto text-center mb-16" data-animate="fade-up">
+        <span class="badge badge-red mb-4">Features</span>
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-4">
+          Everything your academy needs
+        </h2>
+        <p class="text-zinc-400 text-lg">Built specifically for BJJ. Not adapted from generic gym software.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-animate="stagger">
+        {features.map(feature => (
+          <div class="card card-hover">
+            <h3 class="text-white font-bold mb-2">{feature.title}</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Belt tracking spotlight -->
+  <section class="section bg-zinc-950">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div data-animate="fade-up">
+          <span class="badge badge-red mb-4">Belt tracking</span>
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+            Know exactly who's ready to grade
+          </h2>
+          <p class="text-zinc-400 text-lg leading-relaxed mb-6">
+            GymDo tracks every student's training history against IBJJF time-in-belt minimums. Clear, objective data when promotion time comes.
+          </p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3 text-zinc-300">
+              <span class="text-red-500 font-bold mt-0.5">+</span>
+              IBJJF-aligned minimum time requirements
+            </li>
+            <li class="flex items-start gap-3 text-zinc-300">
+              <span class="text-red-500 font-bold mt-0.5">+</span>
+              Stripe-by-stripe tracking at every belt
+            </li>
+            <li class="flex items-start gap-3 text-zinc-300">
+              <span class="text-red-500 font-bold mt-0.5">+</span>
+              Promotion history and notes logged forever
+            </li>
+            <li class="flex items-start gap-3 text-zinc-300">
+              <span class="text-red-500 font-bold mt-0.5">+</span>
+              Belt distribution across your whole academy
+            </li>
+          </ul>
+          <a href="/features/belt-tracking" class="btn btn-primary btn-md">
+            Learn more
+          </a>
+        </div>
+
+        <div data-animate="scale-in">
+          <div class="rounded-2xl border border-white/5 bg-zinc-900 p-6 space-y-3">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="text-white font-semibold text-sm">Belt readiness</h4>
+              <span class="badge badge-green text-xs">Live</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg bg-zinc-800/50">
+              <div>
+                <div class="text-white text-sm font-medium">Thiago Costa</div>
+                <div class="text-zinc-500 text-xs">Blue belt, 3 stripes</div>
+              </div>
+              <div class="text-right">
+                <div class="text-xs font-semibold text-green-400">28mo / 24mo min</div>
+                <div class="text-xs text-green-400">Ready to grade</div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg bg-zinc-800/50">
+              <div>
+                <div class="text-white text-sm font-medium">Mark Johnson</div>
+                <div class="text-zinc-500 text-xs">Purple belt, 2 stripes</div>
+              </div>
+              <div class="text-right">
+                <div class="text-xs font-semibold text-zinc-500">14mo / 18mo min</div>
+                <div class="text-xs text-zinc-500">4 months to go</div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg bg-zinc-800/50">
+              <div>
+                <div class="text-white text-sm font-medium">Sarah Chen</div>
+                <div class="text-zinc-500 text-xs">Blue belt, 4 stripes</div>
+              </div>
+              <div class="text-right">
+                <div class="text-xs font-semibold text-green-400">26mo / 24mo min</div>
+                <div class="text-xs text-green-400">Ready to grade</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Retention spotlight -->
+  <section class="section bg-black">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div data-animate="scale-in">
+          <div class="rounded-2xl border border-white/5 bg-zinc-900 p-6 space-y-3">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="text-white font-semibold text-sm">Retention risk</h4>
+              <span class="text-xs text-zinc-500">Updated live</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg bg-zinc-800/50">
+              <div>
+                <div class="text-white text-sm font-medium">James O'Brien</div>
+                <div class="text-zinc-500 text-xs">Last class 18 days ago</div>
+              </div>
+              <div class="text-right">
+                <div class="text-sm font-bold text-red-400">87/100</div>
+                <div class="text-xs text-red-400">High risk</div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg bg-zinc-800/50">
+              <div>
+                <div class="text-white text-sm font-medium">Maria Santos</div>
+                <div class="text-zinc-500 text-xs">Last class 9 days ago</div>
+              </div>
+              <div class="text-right">
+                <div class="text-sm font-bold text-yellow-400">62/100</div>
+                <div class="text-xs text-yellow-400">Medium risk</div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg bg-zinc-800/50">
+              <div>
+                <div class="text-white text-sm font-medium">Ben Taylor</div>
+                <div class="text-zinc-500 text-xs">Last class 3 days ago</div>
+              </div>
+              <div class="text-right">
+                <div class="text-sm font-bold text-green-400">21/100</div>
+                <div class="text-xs text-green-400">Healthy</div>
+              </div>
+            </div>
+            <div class="mt-2 pt-3 border-t border-white/5">
+              <p class="text-xs text-zinc-500">2 members need a follow-up this week</p>
+            </div>
+          </div>
+        </div>
+
+        <div data-animate="fade-up">
+          <span class="badge badge-red mb-4">Member retention</span>
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+            Catch members before they leave
+          </h2>
+          <p class="text-zinc-400 text-lg leading-relaxed mb-6">
+            GymDo calculates a risk score for every member based on attendance patterns, membership age, and engagement. High-risk members get flagged so you can reach out before they disappear.
+          </p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3 text-zinc-300">
+              <span class="text-red-500 font-bold mt-0.5">+</span>
+              Automated risk scores updated daily
+            </li>
+            <li class="flex items-start gap-3 text-zinc-300">
+              <span class="text-red-500 font-bold mt-0.5">+</span>
+              Early warning before churn happens
+            </li>
+            <li class="flex items-start gap-3 text-zinc-300">
+              <span class="text-red-500 font-bold mt-0.5">+</span>
+              Attendance heatmaps per member
+            </li>
+          </ul>
+          <a href="/features/retention" class="btn btn-primary btn-md">
+            Learn more
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing preview -->
+  <section class="section bg-zinc-950">
+    <div class="container">
+      <div class="max-w-2xl mx-auto text-center mb-12" data-animate="fade-up">
+        <span class="badge badge-red mb-4">Pricing</span>
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-4">
+          Flat pricing. No surprises.
+        </h2>
+        <p class="text-zinc-400 text-lg">
+          No revenue share. No percentage of memberships. One flat monthly fee.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto" data-animate="stagger">
+        <div class="card border-red-500/40 text-center">
+          <div class="text-3xl font-black text-white mb-1">$79<span class="text-base font-normal text-zinc-500">/mo</span></div>
+          <div class="text-xs text-zinc-500">Up to 50 members</div>
+        </div>
+        <div class="card text-center">
+          <div class="text-3xl font-black text-white mb-1">$129<span class="text-base font-normal text-zinc-500">/mo</span></div>
+          <div class="text-xs text-zinc-500">51-150 members</div>
+        </div>
+        <div class="card text-center">
+          <div class="text-3xl font-black text-white mb-1">$179<span class="text-base font-normal text-zinc-500">/mo</span></div>
+          <div class="text-xs text-zinc-500">151-300 members</div>
+        </div>
+        <div class="card text-center">
+          <div class="text-3xl font-black text-white mb-1">$229<span class="text-base font-normal text-zinc-500">/mo</span></div>
+          <div class="text-xs text-zinc-500">300+ members</div>
+        </div>
+      </div>
+
+      <div class="text-center mt-8" data-animate="fade-up">
+        <p class="text-zinc-500 text-sm mb-4">All plans include every feature. No upsells.</p>
+        <a href="/pricing" class="btn btn-secondary btn-md">Full pricing details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section bg-black relative overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#27272a22_1px,transparent_1px),linear-gradient(to_bottom,#27272a22_1px,transparent_1px)] bg-[size:64px_64px]" aria-hidden="true"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-red-600/8 blur-[160px] rounded-full" aria-hidden="true"></div>
+    <div class="container relative text-center" data-animate="fade-up">
+      <h2 class="text-4xl md:text-6xl font-black text-white mb-6 max-w-3xl mx-auto">
+        Ready to stop losing members you worked hard to get?
+      </h2>
+      <p class="text-zinc-400 text-xl mb-10 max-w-xl mx-auto">
+        30-day free trial. No credit card. 30-day money back guarantee.
+      </p>
+      <a href={TRIAL_URL} class="btn btn-primary btn-lg">
+        Start your free trial
+      </a>
+      <p class="mt-4 text-xs text-zinc-600">
+        Questions? Email <a href="mailto:josh@cmdsoftware.com.au" class="text-zinc-500 hover:text-white transition-colors">josh@cmdsoftware.com.au</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

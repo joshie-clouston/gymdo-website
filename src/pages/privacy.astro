@@ -1,0 +1,49 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Privacy Policy - GymDo"
+  description="GymDo privacy policy."
+>
+  <section class="section bg-black">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl font-black text-white mb-4">Privacy Policy</h1>
+        <p class="text-zinc-500 text-sm mb-12">Last updated: March 2026</p>
+
+        <div class="prose prose-invert max-w-none space-y-8">
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">1. Information we collect</h2>
+            <p class="text-zinc-400">We collect information you provide when signing up for GymDo, including your name, email address, and gym details. We also collect information about your members as you add them to the platform, including their name, contact details, belt rank, and attendance history.</p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">2. How we use your information</h2>
+            <p class="text-zinc-400">We use the information collected to provide and improve the GymDo service, process payments, send service-related communications, and support your use of the platform.</p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">3. Data storage</h2>
+            <p class="text-zinc-400">Your data is stored on servers in Australia (Sydney region). We use industry-standard encryption for data in transit and at rest.</p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">4. Third parties</h2>
+            <p class="text-zinc-400">We use Stripe for payment processing. Stripe's privacy policy applies to payment data. We do not sell your data to third parties.</p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">5. Your rights</h2>
+            <p class="text-zinc-400">You can request access to, correction of, or deletion of your personal data at any time by emailing <a href="mailto:josh@cmdsoftware.com.au" class="text-red-400 hover:text-red-300">josh@cmdsoftware.com.au</a>.</p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4">6. Contact</h2>
+            <p class="text-zinc-400">For privacy-related queries, contact <a href="mailto:josh@cmdsoftware.com.au" class="text-red-400 hover:text-red-300">josh@cmdsoftware.com.au</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
