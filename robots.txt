@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# AI Crawlers - Allow for AEO
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+# Block scrapers with no citation value
+User-agent: Bytespider
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: meta-externalagent
+Disallow: /
+
+Sitemap: https://joshie-clouston.github.io/sitemap-index.xml
