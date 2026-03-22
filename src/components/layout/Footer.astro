@@ -3,35 +3,35 @@ const currentYear = new Date().getFullYear();
 
 const links = {
   Product: [
-    { label: 'Features', href: '/features' },
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'Belt Tracking', href: '/features/belt-tracking' },
-    { label: 'Member Retention', href: '/features/retention' },
+    { label: 'Features', href: '/gymdo-website/features' },
+    { label: 'Pricing', href: '/gymdo-website/pricing' },
+    { label: 'Belt Tracking', href: '/gymdo-website/features/belt-tracking' },
+    { label: 'Member Retention', href: '/gymdo-website/features/retention' },
   ],
   Company: [
-    { label: 'About', href: '/about' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'About', href: '/gymdo-website/about' },
+    { label: 'Contact', href: '/gymdo-website/contact' },
   ],
   Legal: [
-    { label: 'Privacy Policy', href: '/privacy' },
-    { label: 'Terms of Use', href: '/terms' },
+    { label: 'Privacy Policy', href: '/gymdo-website/privacy' },
+    { label: 'Terms of Use', href: '/gymdo-website/terms' },
   ],
 };
 ---
-<footer class="border-t border-white/5 bg-zinc-950">
+<footer class="border-t border-slate-200 bg-slate-50">
   <div class="container section-sm">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
       <!-- Brand -->
       <div class="lg:col-span-2">
-        <a href="/" class="flex items-center gap-2 font-bold text-xl tracking-tight mb-4 inline-flex">
-          <span class="text-red-500">GymD</span><span class="text-white">o</span>
+        <a href="/gymdo-website/" class="flex items-center gap-2 font-bold text-xl tracking-tight mb-4 inline-flex">
+          <span class="text-[#0891b2]">Gym</span><span class="text-[#0c2d4e]">Do</span>
         </a>
-        <p class="text-zinc-400 text-sm leading-relaxed max-w-xs">
-          Gym management built from the mat up. Made for BJJ academies, by people who train.
+        <p class="text-slate-500 text-sm leading-relaxed max-w-xs">
+          Gym management built from the mat up. Made for BJJ academies, by people who love the sport.
         </p>
         <div class="mt-4">
           <span class="badge badge-green">
-            <span class="w-1.5 h-1.5 rounded-full bg-green-400 inline-block"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span>
             30-day free trial
           </span>
         </div>
@@ -40,11 +40,11 @@ const links = {
       <!-- Links -->
       {Object.entries(links).map(([category, items]) => (
         <div>
-          <h4 class="text-xs font-semibold tracking-widest uppercase text-zinc-500 mb-4">{category}</h4>
+          <h4 class="text-xs font-semibold tracking-widest uppercase text-slate-400 mb-4">{category}</h4>
           <ul class="space-y-3">
             {items.map(item => (
               <li>
-                <a href={item.href} class="text-sm text-zinc-400 hover:text-white transition-colors">
+                <a href={item.href} class="text-sm text-slate-500 hover:text-slate-900 transition-colors">
                   {item.label}
                 </a>
               </li>
@@ -54,11 +54,11 @@ const links = {
       ))}
     </div>
 
-    <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-xs text-zinc-500">
-        &copy; {currentYear} GymDo. ABN to be updated. All rights reserved.
+    <div class="border-t border-slate-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-slate-400">
+        &copy; {currentYear} GymDo. All rights reserved.
       </p>
-      <p class="text-xs text-zinc-600">
+      <p class="text-xs text-slate-400">
         Built from the mat up. Gold Coast, Australia.
       </p>
     </div>

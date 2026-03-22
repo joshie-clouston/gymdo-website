@@ -3,12 +3,13 @@ export const prerender = true;
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const TRIAL_URL = 'https://gymdo-staff-app-main-yzbyzu.laravel.cloud/register';
+const DEMO_EMAIL = 'josh@cmdsoftware.com.au';
 
 const plans = [
-  { range: 'Up to 50 members', price: 79, id: 'starter' },
-  { range: '51-150 members', price: 129, id: 'growth', popular: true },
-  { range: '151-300 members', price: 179, id: 'scale' },
-  { range: '300+ members', price: 229, id: 'enterprise' },
+  { range: 'Up to 50 members', price: 79, popular: false },
+  { range: '51-150 members', price: 129, popular: true },
+  { range: '151-300 members', price: 179, popular: false },
+  { range: '300+ members', price: 229, popular: false },
 ];
 
 const allFeatures = [
@@ -19,74 +20,73 @@ const allFeatures = [
   'Stripe-powered billing and payments',
   'Attendance tracking and check-ins',
   'Waiver management',
-  'Real-time analytics dashboard',
-  'Drop-in booking and management',
+  'Analytics dashboard',
+  'Drop-in booking',
   'Email and SMS notifications',
-  'API access',
   'Priority support',
+  'Data export anytime',
 ];
 
 const faqs = [
   {
     q: 'Is there a free trial?',
-    a: 'Yes. 30 days free, no credit card required. You get full access to every feature from day one.',
+    a: '30 days free, no credit card required. Full access to every feature from day one.',
   },
   {
-    q: 'What happens if I go over my member limit?',
-    a: 'You move to the next tier. We notify you before that happens and there are no surprise charges. If you need a couple weeks to sort it out, just reach out.',
+    q: 'What happens if my gym grows past my plan limit?',
+    a: "We'll notify you before you hit your limit and move you to the next tier. No surprise charges, no service interruption.",
   },
   {
     q: 'Is there a revenue share or percentage fee?',
-    a: 'None. Zero. The price you see is what you pay. We make money from subscriptions, not your membership revenue.',
+    a: 'None. Zero. You pay a flat monthly fee. We make money from subscriptions, not your membership revenue.',
   },
   {
     q: 'Can I cancel anytime?',
-    a: 'Yes. Month-to-month, cancel anytime, no lock-in contracts.',
+    a: 'Yes. Month-to-month, no lock-in contracts. Cancel from within the platform.',
   },
   {
     q: 'What is the money back guarantee?',
-    a: 'If you are not happy in the first 30 days after your trial ends, email us and we will refund your first payment, no questions asked.',
+    a: "If you're not happy in the first 30 days after your trial ends, email us and we'll refund your first payment, no questions asked.",
   },
   {
     q: 'Do all plans include all features?',
-    a: 'Yes. There are no feature tiers or upsells. Every plan includes everything. You only pay more as your academy grows.',
+    a: 'Yes. No feature tiers, no upsells. Every plan includes everything. You only pay more as your academy grows.',
+  },
+  {
+    q: 'Can I get a demo before signing up?',
+    a: 'Absolutely. Email josh@cmdsoftware.com.au and we\'ll walk you through the platform live.',
   },
 ];
 ---
 <BaseLayout
   title="Pricing - GymDo"
-  description="GymDo gym management software. Flat monthly pricing for BJJ academies, from $79/mo. No revenue share, no lock-in, 30-day free trial."
+  description="GymDo gym management pricing. Flat monthly fee from $79/mo for BJJ academies. No revenue share, no lock-in, 30-day free trial."
 >
-  <!-- Hero -->
-  <section class="section bg-black relative overflow-hidden">
-    <div class="absolute inset-0 bg-[linear-gradient(to_right,#27272a33_1px,transparent_1px),linear-gradient(to_bottom,#27272a33_1px,transparent_1px)] bg-[size:64px_64px]" aria-hidden="true"></div>
+  <section class="section bg-[#0c2d4e] relative overflow-hidden">
     <div class="container relative text-center" data-animate="fade-up">
-      <span class="badge badge-red mb-4">Pricing</span>
-      <h1 class="text-5xl md:text-6xl font-black text-white mb-6">
-        Flat pricing.<br />No surprises.
-      </h1>
-      <p class="text-zinc-400 text-xl max-w-xl mx-auto">
-        No revenue share. No percentage of memberships. Pay based on how many members you have, nothing else.
+      <span class="badge mb-4" style="background:rgba(34,211,238,0.12);color:#67e8f9;border-color:rgba(34,211,238,0.2);">Pricing</span>
+      <h1 class="text-5xl md:text-6xl font-black text-white mb-6">Flat pricing.<br />No surprises.</h1>
+      <p class="text-slate-300 text-xl max-w-xl mx-auto">
+        Pay based on how many members you have. No revenue share, no percentage fees, no upsells.
       </p>
     </div>
   </section>
 
-  <!-- Plans -->
-  <section class="section bg-zinc-950">
+  <section class="section bg-white">
     <div class="container">
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto" data-animate="stagger">
         {plans.map(plan => (
-          <div class={`card flex flex-col ${plan.popular ? 'border-red-500/50 relative' : ''}`}>
+          <div class={`card flex flex-col relative ${plan.popular ? 'border-[#0891b2]' : ''}`}>
             {plan.popular && (
               <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span class="badge badge-red text-[10px]">Most popular</span>
+                <span class="badge badge-teal text-[10px]">Most popular</span>
               </div>
             )}
             <div class="mb-6">
-              <div class="text-4xl font-black text-white mb-1">
-                ${plan.price}<span class="text-base font-normal text-zinc-500">/mo</span>
+              <div class="text-4xl font-black text-[#0c2d4e] mb-1">
+                ${plan.price}<span class="text-base font-normal text-slate-400">/mo</span>
               </div>
-              <div class="text-sm text-zinc-400">{plan.range}</div>
+              <div class="text-sm text-slate-400">{plan.range}</div>
             </div>
             <a href={TRIAL_URL} class={`btn btn-md w-full mt-auto ${plan.popular ? 'btn-primary' : 'btn-secondary'}`}>
               Start free trial
@@ -94,59 +94,51 @@ const faqs = [
           </div>
         ))}
       </div>
-
-      <p class="text-center text-zinc-500 text-sm mt-8" data-animate="fade-up">
-        All plans include a 30-day free trial. No credit card required.
-      </p>
+      <p class="text-center text-slate-400 text-sm mt-8">30-day free trial. No credit card required.</p>
     </div>
   </section>
 
-  <!-- All features -->
-  <section class="section bg-black">
+  <section class="section bg-slate-50">
     <div class="container">
       <div class="max-w-2xl mx-auto text-center mb-12" data-animate="fade-up">
-        <h2 class="text-4xl font-black text-white mb-4">
-          Everything included in every plan
-        </h2>
-        <p class="text-zinc-400">No feature tiers. No upsells. All plans get all features.</p>
+        <h2 class="text-4xl font-black text-[#0c2d4e] mb-4">Everything included in every plan</h2>
+        <p class="text-slate-500">No feature tiers. No upsells.</p>
       </div>
-
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto" data-animate="stagger">
         {allFeatures.map(feature => (
-          <div class="flex items-center gap-3 p-4 rounded-lg border border-white/5 bg-white/[0.02]">
-            <span class="text-red-500 font-bold flex-shrink-0">+</span>
-            <span class="text-zinc-300 text-sm">{feature}</span>
+          <div class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 bg-white">
+            <span class="text-[#0891b2] font-bold flex-shrink-0">+</span>
+            <span class="text-slate-600 text-sm">{feature}</span>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- FAQs -->
-  <section class="section bg-zinc-950">
+  <section class="section bg-white">
     <div class="container">
       <div class="max-w-2xl mx-auto text-center mb-12" data-animate="fade-up">
-        <h2 class="text-4xl font-black text-white mb-4">Frequently asked questions</h2>
+        <h2 class="text-4xl font-black text-[#0c2d4e] mb-4">Frequently asked questions</h2>
       </div>
-
       <div class="max-w-3xl mx-auto space-y-4" data-animate="stagger">
         {faqs.map(faq => (
           <div class="card">
-            <h3 class="text-white font-bold mb-2">{faq.q}</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed">{faq.a}</p>
+            <h3 class="text-[#0c2d4e] font-bold mb-2">{faq.q}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{faq.a}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section bg-black">
+  <section class="section bg-[#0c2d4e]">
     <div class="container text-center" data-animate="fade-up">
       <h2 class="text-4xl font-black text-white mb-4">Start your free trial today</h2>
-      <p class="text-zinc-400 mb-8">30 days free. 30-day money back guarantee after that.</p>
-      <a href={TRIAL_URL} class="btn btn-primary btn-lg">Start free trial</a>
-      <p class="mt-4 text-xs text-zinc-600">No credit card. No lock-in. Cancel anytime.</p>
+      <p class="text-slate-300 mb-8">Or book a live walkthrough first.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={TRIAL_URL} class="btn btn-primary btn-lg">Start free trial</a>
+        <a href={`mailto:${DEMO_EMAIL}?subject=GymDo Demo Request`} class="btn btn-outline-white btn-lg">Book a walkthrough</a>
+      </div>
     </div>
   </section>
 </BaseLayout>

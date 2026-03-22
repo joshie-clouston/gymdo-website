@@ -3,59 +3,60 @@ export const prerender = true;
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const TRIAL_URL = 'https://gymdo-staff-app-main-yzbyzu.laravel.cloud/register';
+const DEMO_EMAIL = 'josh@cmdsoftware.com.au';
 
 const featureGroups = [
   {
-    title: 'Belt progression',
-    description: 'The only platform built around how BJJ belt promotions actually work.',
+    title: 'Belt progression tracking',
+    description: 'The only platform with real IBJJF-aligned belt tracking built in.',
     features: [
-      'IBJJF-aligned time-in-belt minimums tracked automatically',
-      'Stripe-by-stripe tracking from white through black',
-      'Promotion eligibility dashboard with at-a-glance readiness',
-      'Full promotion history and coach notes logged forever',
-      'Belt distribution charts across your whole academy',
+      'Time-in-belt tracking against IBJJF minimums, automatically',
+      'Stripe-by-stripe records from white through black',
+      'Promotion eligibility dashboard at a glance',
+      'Full promotion history and coach notes',
+      'Belt distribution view across your academy',
     ],
-    href: '/features/belt-tracking',
+    href: '/gymdo-website/features/belt-tracking',
   },
   {
-    title: 'Member retention',
-    description: 'Know who is drifting before they disappear.',
+    title: 'Member retention scoring',
+    description: 'Know who is going quiet before they cancel.',
     features: [
-      'AI risk scores for every active member, updated daily',
-      'Early warning flags for members attending less',
-      'Individual attendance heatmaps showing 12 months at a glance',
-      'Segmented view by risk level for targeted outreach',
-      'Member health trends across your whole academy',
+      'Daily risk scores for every active member',
+      'Flags who needs a check-in this week',
+      'Attendance heatmaps per member (12 months)',
+      'Retention trends across your whole academy',
+      'Intervene before it becomes a cancellation',
     ],
-    href: '/features/retention',
+    href: '/gymdo-website/features/retention',
   },
   {
     title: 'Class scheduling and booking',
-    description: 'Run your timetable without the admin overhead.',
+    description: 'Run your timetable with less admin overhead.',
     features: [
-      'Visual weekly timetable with drag-and-drop scheduling',
-      'Members book via the mobile app, no phone calls',
-      'Real-time attendance tracking and check-in confirmations',
-      'Class capacity limits and waitlists',
+      'Visual weekly timetable with simple scheduling',
+      'Members book from the app, no phone calls',
+      'Real-time attendance and check-in tracking',
+      'Class capacity limits',
       'Session history and attendance reports',
     ],
     href: null,
   },
   {
     title: 'Membership and billing',
-    description: 'Your revenue, on autopilot.',
+    description: 'Your revenue, running on autopilot.',
     features: [
       'Stripe-powered recurring billing with automatic retries',
       'Membership pause and cancellation workflows',
-      'Monthly Recurring Revenue tracking',
-      'Failed payment handling with member notifications',
-      'Payment history and receipts',
+      'Monthly Recurring Revenue dashboard',
+      'Failed payment handling',
+      'Payment history and receipts for members',
     ],
     href: null,
   },
   {
     title: 'Member mobile app',
-    description: 'Give your members a professional app experience.',
+    description: 'A clean, professional app experience for your members.',
     features: [
       'iOS and Android native app',
       'Class booking and cancellation',
@@ -67,13 +68,13 @@ const featureGroups = [
   },
   {
     title: 'Analytics and reporting',
-    description: 'Know your gym at a glance.',
+    description: 'Everything you need to make good decisions about your gym.',
     features: [
       'Real-time MRR dashboard',
       'Attendance trends by class, day, and coach',
       'Belt distribution across your academy',
-      'New member and churn tracking',
-      'Retention score trends over time',
+      'Member growth and churn tracking',
+      'Retention trends over time',
     ],
     href: null,
   },
@@ -81,42 +82,33 @@ const featureGroups = [
 ---
 <BaseLayout
   title="Features - GymDo"
-  description="GymDo features for BJJ gym management. Belt tracking, member retention scoring, class scheduling, billing, and a member mobile app. Built specifically for BJJ academies."
+  description="GymDo features for BJJ gym management. Belt tracking, retention scoring, scheduling, billing, and a member mobile app built specifically for BJJ academies."
 >
-  <!-- Hero -->
-  <section class="section bg-black relative overflow-hidden">
-    <div class="absolute inset-0 bg-[linear-gradient(to_right,#27272a33_1px,transparent_1px),linear-gradient(to_bottom,#27272a33_1px,transparent_1px)] bg-[size:64px_64px]" aria-hidden="true"></div>
+  <section class="section bg-[#0c2d4e] relative overflow-hidden">
     <div class="container relative text-center" data-animate="fade-up">
-      <span class="badge badge-red mb-4">Features</span>
-      <h1 class="text-5xl md:text-6xl font-black text-white mb-6">
-        Built for BJJ.<br />Not retrofitted for it.
-      </h1>
-      <p class="text-zinc-400 text-xl max-w-2xl mx-auto">
-        Every feature in GymDo was designed with BJJ academies in mind. Not adapted from a yoga studio template.
-      </p>
+      <span class="badge mb-4" style="background:rgba(34,211,238,0.12);color:#67e8f9;border-color:rgba(34,211,238,0.2);">Features</span>
+      <h1 class="text-5xl md:text-6xl font-black text-white mb-6">Built for BJJ.<br />Not retrofitted for it.</h1>
+      <p class="text-slate-300 text-xl max-w-2xl mx-auto">Every feature was designed around how BJJ academies actually operate.</p>
     </div>
   </section>
 
-  <!-- Feature groups -->
-  <section class="section bg-zinc-950">
+  <section class="section bg-white">
     <div class="container">
       <div class="space-y-20">
         {featureGroups.map((group, i) => (
           <div class={`grid lg:grid-cols-2 gap-12 items-start ${i % 2 === 1 ? 'lg:grid-flow-dense' : ''}`} data-animate="fade-up">
             <div class={i % 2 === 1 ? 'lg:col-start-2' : ''}>
-              <h2 class="text-3xl font-black text-white mb-3">{group.title}</h2>
-              <p class="text-zinc-400 text-lg mb-6">{group.description}</p>
+              <h2 class="text-3xl font-black text-[#0c2d4e] mb-3">{group.title}</h2>
+              <p class="text-slate-500 text-lg mb-6">{group.description}</p>
               {group.href && (
-                <a href={group.href} class="btn btn-secondary btn-sm">
-                  Learn more
-                </a>
+                <a href={group.href} class="btn btn-primary btn-sm">Learn more</a>
               )}
             </div>
             <div class={`space-y-3 ${i % 2 === 1 ? 'lg:col-start-1' : ''}`}>
               {group.features.map(feature => (
-                <div class="flex items-start gap-3 p-4 rounded-lg border border-white/5 bg-white/[0.02]">
-                  <span class="text-red-500 font-bold flex-shrink-0 mt-0.5">+</span>
-                  <span class="text-zinc-300 text-sm">{feature}</span>
+                <div class="flex items-start gap-3 p-4 rounded-lg border border-slate-200 bg-slate-50">
+                  <span class="text-[#0891b2] font-bold flex-shrink-0 mt-0.5">+</span>
+                  <span class="text-slate-600 text-sm">{feature}</span>
                 </div>
               ))}
             </div>
@@ -126,12 +118,14 @@ const featureGroups = [
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section bg-black">
+  <section class="section bg-[#0c2d4e]">
     <div class="container text-center" data-animate="fade-up">
       <h2 class="text-4xl font-black text-white mb-4">Try every feature free for 30 days</h2>
-      <p class="text-zinc-400 mb-8">No credit card. No lock-in. Full access from day one.</p>
-      <a href={TRIAL_URL} class="btn btn-primary btn-lg">Start free trial</a>
+      <p class="text-slate-300 mb-8">Or book a walkthrough and we'll show you the platform live.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={TRIAL_URL} class="btn btn-primary btn-lg">Start free trial</a>
+        <a href={`mailto:${DEMO_EMAIL}?subject=GymDo Demo Request`} class="btn btn-outline-white btn-lg">Book a walkthrough</a>
+      </div>
     </div>
   </section>
 </BaseLayout>
