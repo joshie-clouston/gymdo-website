@@ -18,7 +18,7 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const fullTitle = title.includes('GymDo') ? title : `${title} | GymDo`;
+const fullTitle = title.includes('GymDō') ? title : `${title} | GymDō`;
 ---
 <!doctype html>
 <html lang="en-AU">
@@ -35,7 +35,7 @@ const fullTitle = title.includes('GymDo') ? title : `${title} | GymDo`;
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
-    <meta property="og:site_name" content="GymDo" />
+    <meta property="og:site_name" content="GymDō" />
     <meta property="og:locale" content="en_AU" />
 
     <!-- Twitter -->
