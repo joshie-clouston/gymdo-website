@@ -6,108 +6,177 @@ import OrgSchema from '../components/schema/OrgSchema.astro';
 const TRIAL_URL = 'https://gymdo-staff-app-main-yzbyzu.laravel.cloud/register';
 const DEMO_EMAIL = 'josh@cmdsoftware.com.au';
 
+const pains = [
+  {
+    icon: '📉',
+    headline: 'You find out a member left when the payment stops',
+    body: 'Not when they stopped training. Not when they stopped enjoying it. When the direct debit fails. By then they\'re already gone.',
+  },
+  {
+    icon: '🥋',
+    headline: 'Belt promotion time means guessing — or a spreadsheet',
+    body: 'A student asks if they\'re ready. You try to remember how long they\'ve been training, when they got their last stripe. It\'s not a great moment.',
+  },
+  {
+    icon: '🔧',
+    headline: 'Your software has a spin class category',
+    body: 'And fields for PT sessions, yoga memberships, and tanning credits. None of that exists on your mats. But you navigate around it every day.',
+  },
+  {
+    icon: '💸',
+    headline: 'You\'re paying $300/month for something that\'s never heard of a guard pass',
+    body: 'Mindbody and Glofox were built for mainstream fitness. BJJ gyms are an afterthought. You\'re paying premium prices for a platform that doesn\'t understand your sport.',
+  },
+];
+
 const features = [
   {
     title: 'Belt progression tracking',
-    description: 'Track every student against IBJJF minimums. Know who is ready to grade with confidence, not guesswork.',
+    description: 'IBJJF-aligned time tracking from white to black. Know exactly who is ready to grade — with data to back it up.',
   },
   {
     title: 'Member retention scoring',
-    description: 'Daily risk scores show you who is drifting before they disappear. Reach out at the right moment.',
+    description: 'Daily risk scores flag who is going quiet. Catch it two weeks before they cancel, not two weeks after.',
   },
   {
     title: 'Class scheduling and booking',
-    description: 'Visual timetable, member booking app, real-time attendance. Your admin time back.',
+    description: 'Visual timetable, member booking app, automatic attendance marking. Your admin time back.',
   },
   {
     title: 'Membership and billing',
-    description: 'Stripe-powered recurring billing. Pauses, cancellations, and payment retries handled automatically.',
+    description: 'Stripe-powered recurring billing. Pauses, cancellations, and failed payment retries handled without you lifting a finger.',
   },
   {
     title: 'Member app (iOS and Android)',
-    description: 'Your members book classes, track their belt progress, and manage their own membership from their phone.',
+    description: 'Your members book classes, see their belt progress, and manage their own membership — without texting you.',
   },
   {
     title: 'Analytics dashboard',
-    description: 'MRR, attendance trends, belt distribution, retention rates. Everything you need to make good decisions.',
+    description: 'MRR, attendance trends, belt distribution, retention rate. The numbers you actually need, in one place.',
   },
 ];
 
 const steps = [
   {
     num: '01',
-    title: 'Set up in under an hour',
-    description: 'Add your gym details, import your members from a spreadsheet or manually, and set up your class timetable. Most gyms are live same day.',
+    title: 'Import your members — done in under an hour',
+    description: 'Add your gym, import your member list from a spreadsheet, set your class timetable. Most academies are live the same day they sign up.',
   },
   {
     num: '02',
-    title: 'Invite your members to the app',
-    description: 'Members get a welcome email with their login. They download the app, book their first class, and see their own belt progress immediately.',
+    title: 'Your members get the app automatically',
+    description: 'They receive a welcome email, download the app, and can book their first class and see their belt progress immediately. No manual setup on your end.',
   },
   {
     num: '03',
-    title: 'Focus on coaching, not admin',
-    description: 'Attendance tracks itself. Billing runs automatically. You get notified when someone is drifting. The rest just works.',
+    title: 'Get back on the mat',
+    description: 'Attendance tracks itself. Billing runs every month. You\'re notified when someone is drifting. Everything else just works.',
   },
 ];
 ---
 <BaseLayout
-  title="GymDō - BJJ Gym Management Built From The Mat Up"
-  description="GymDō is gym management software built for BJJ academies. Belt tracking, retention scoring, class scheduling and billing. Flat pricing, 30-day free trial."
+  title="GymDō - BJJ Gym Management Software for Academies"
+  description="GymDō is the only gym management platform built specifically for BJJ academies. Belt tracking, member retention, billing and scheduling. 30-day free trial."
 >
   <OrgSchema slot="structured-data" />
 
   <!-- Hero -->
   <section class="bg-[#0c2d4e] relative overflow-hidden pt-16 pb-24 md:pt-24 md:pb-32">
-    <!-- Subtle wave pattern -->
     <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(ellipse at 50% 0%, #22d3ee 0%, transparent 70%);" aria-hidden="true"></div>
     <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#0891b2] to-transparent opacity-30" aria-hidden="true"></div>
 
     <div class="container relative">
       <div class="max-w-4xl mx-auto text-center">
         <div class="inline-flex items-center gap-2 mb-6" data-animate="fade-in">
-          <span class="badge badge-teal" style="background:rgba(34,211,238,0.12);color:#67e8f9;border-color:rgba(34,211,238,0.2);">BJJ-first</span>
-          <span class="text-sm text-slate-400">30-day free trial, no credit card</span>
+          <span class="badge" style="background:rgba(34,211,238,0.12);color:#67e8f9;border-color:rgba(34,211,238,0.2);">Built for BJJ. Not yoga studios.</span>
         </div>
 
         <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight" data-animate="fade-up">
-          The calm way to<br />
-          <span class="text-[#38bdf8]">run your academy</span>
+          Every other platform<br />
+          <span class="text-[#38bdf8]">was built for someone else.</span>
         </h1>
 
         <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed" data-animate="fade-up">
-          GymDō takes the admin noise off your plate so you can focus on what matters: coaching, community, and keeping your mats full. Flat pricing, no platform cut.
+          GymDō is gym management software built from the ground up for BJJ academies. Belt tracking that follows IBJJF standards. Retention scoring that catches members before they drift. Billing that runs itself. Nothing you don't need.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center" data-animate="fade-up">
           <a href={TRIAL_URL} class="btn btn-primary btn-lg">
-            Start free trial
+            Start free trial — 30 days
           </a>
           <a href={`mailto:${DEMO_EMAIL}?subject=GymDō Demo Request`} class="btn btn-outline-white btn-lg">
             Book a walkthrough
           </a>
         </div>
 
-        <p class="mt-4 text-xs text-slate-500">No credit card required. Cancel anytime. 30-day money back guarantee.</p>
+        <p class="mt-4 text-xs text-slate-500">No credit card required. Cancel anytime. 30-day money back guarantee after trial ends.</p>
       </div>
 
-      <!-- Stats -->
+      <!-- Stats bar -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20 max-w-3xl mx-auto" data-animate="stagger">
         <div class="text-center p-6 rounded-xl border border-white/8 bg-white/[0.04]">
-          <div class="text-3xl font-black text-white mb-1">$0</div>
-          <div class="text-xs text-slate-400 uppercase tracking-wider">Revenue share</div>
+          <div class="text-3xl font-black text-white mb-1">$79</div>
+          <div class="text-xs text-slate-400 uppercase tracking-wider">Starts at /mo</div>
         </div>
         <div class="text-center p-6 rounded-xl border border-white/8 bg-white/[0.04]">
-          <div class="text-3xl font-black text-white mb-1">30 days</div>
-          <div class="text-xs text-slate-400 uppercase tracking-wider">Free trial</div>
+          <div class="text-3xl font-black text-white mb-1">30</div>
+          <div class="text-xs text-slate-400 uppercase tracking-wider">Day free trial</div>
         </div>
         <div class="text-center p-6 rounded-xl border border-white/8 bg-white/[0.04]">
           <div class="text-3xl font-black text-white mb-1">&lt; 1hr</div>
-          <div class="text-xs text-slate-400 uppercase tracking-wider">Setup time</div>
+          <div class="text-xs text-slate-400 uppercase tracking-wider">To go live</div>
         </div>
         <div class="text-center p-6 rounded-xl border border-white/8 bg-white/[0.04]">
-          <div class="text-3xl font-black text-white mb-1">Flat</div>
-          <div class="text-xs text-slate-400 uppercase tracking-wider">Monthly pricing</div>
+          <div class="text-3xl font-black text-white mb-1">BJJ</div>
+          <div class="text-xs text-slate-400 uppercase tracking-wider">Only. Always.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain agitation -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-2xl mx-auto text-center mb-16" data-animate="fade-up">
+        <span class="badge badge-navy mb-4">Sound familiar?</span>
+        <h2 class="text-4xl md:text-5xl font-black text-[#0c2d4e] mb-4">
+          This is what running a BJJ gym on generic software looks like.
+        </h2>
+        <p class="text-slate-500 text-lg">If you recognise any of these, you already know why GymDō exists.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto" data-animate="stagger">
+        {pains.map(pain => (
+          <div class="card border-slate-200 bg-slate-50">
+            <div class="text-3xl mb-4">{pain.icon}</div>
+            <h3 class="text-[#0c2d4e] font-bold text-lg mb-2">{pain.headline}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{pain.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="max-w-2xl mx-auto text-center mt-16" data-animate="fade-up">
+        <p class="text-2xl font-bold text-[#0c2d4e] mb-3">None of this is your fault. It's your software.</p>
+        <p class="text-slate-500 text-lg">Mindbody, Glofox, and Gymdesk weren't built for BJJ. They were bolted on. GymDō was designed around how your academy actually works — from the first stripe to the belt promotion, from the first class booking to the renewal reminder.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution reveal -->
+  <section class="section bg-[#0c2d4e] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(ellipse at 50% 0%, #22d3ee 0%, transparent 70%);" aria-hidden="true"></div>
+    <div class="container relative">
+      <div class="max-w-3xl mx-auto text-center" data-animate="fade-up">
+        <span class="badge mb-6" style="background:rgba(34,211,238,0.12);color:#67e8f9;border-color:rgba(34,211,238,0.2);">The fix</span>
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+          One platform. Everything your academy needs. Nothing it doesn't.
+        </h2>
+        <p class="text-slate-300 text-xl leading-relaxed mb-10">
+          GymDō replaces the spreadsheets, the payment chasing, the guesswork at grading time, and the subscriptions to platforms that don't understand BJJ. It runs quietly in the background while you run your academy.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={TRIAL_URL} class="btn btn-primary btn-lg">Start free trial</a>
+          <a href={`mailto:${DEMO_EMAIL}?subject=GymDō Demo Request`} class="btn btn-outline-white btn-lg">Book a walkthrough</a>
         </div>
       </div>
     </div>
@@ -117,11 +186,11 @@ const steps = [
   <section class="section bg-white">
     <div class="container">
       <div class="max-w-2xl mx-auto text-center mb-16" data-animate="fade-up">
-        <span class="badge badge-navy mb-4">Getting started</span>
+        <span class="badge badge-teal mb-4">Getting started</span>
         <h2 class="text-4xl md:text-5xl font-black text-[#0c2d4e] mb-4">
           Live in a day, not a month
         </h2>
-        <p class="text-slate-500 text-lg">No implementation fees, no consultant, no five-step onboarding. Just set it up and go.</p>
+        <p class="text-slate-500 text-lg">No implementation fees. No consultant. No five-step onboarding. You'll have members booking classes today.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto" data-animate="stagger">
@@ -136,15 +205,15 @@ const steps = [
     </div>
   </section>
 
-  <!-- Product preview (admin dashboard) -->
+  <!-- Product preview -->
   <section class="section bg-slate-50">
     <div class="container">
       <div class="max-w-2xl mx-auto text-center mb-12" data-animate="fade-up">
         <span class="badge badge-teal mb-4">See it in action</span>
         <h2 class="text-4xl md:text-5xl font-black text-[#0c2d4e] mb-4">
-          Clean, simple, built for BJJ
+          Clean. Simple. Built for BJJ.
         </h2>
-        <p class="text-slate-500 text-lg">No bloat, no generic menus, no features you'll never use.</p>
+        <p class="text-slate-500 text-lg">No bloat. No generic menus. No fields for things that don't exist on your mats.</p>
       </div>
 
       <!-- Dashboard mockup -->
@@ -243,11 +312,11 @@ const steps = [
   <section class="section bg-white">
     <div class="container">
       <div class="max-w-2xl mx-auto text-center mb-16" data-animate="fade-up">
-        <span class="badge badge-teal mb-4">Features</span>
+        <span class="badge badge-teal mb-4">What's included</span>
         <h2 class="text-4xl md:text-5xl font-black text-[#0c2d4e] mb-4">
-          Everything your academy needs
+          Everything your academy needs. Nothing it doesn't.
         </h2>
-        <p class="text-slate-500 text-lg">Built specifically for BJJ. Not adapted from a yoga studio template.</p>
+        <p class="text-slate-500 text-lg">Every feature exists because a BJJ gym owner needed it — not because a product manager thought it would look good on a pricing page.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-animate="stagger">
@@ -268,17 +337,17 @@ const steps = [
         <div data-animate="fade-up">
           <span class="badge mb-4" style="background:rgba(34,211,238,0.12);color:#67e8f9;border-color:rgba(34,211,238,0.2);">Belt tracking</span>
           <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
-            Confident promotions, every time
+            Never guess at a promotion again
           </h2>
           <p class="text-slate-300 text-lg leading-relaxed mb-6">
-            GymDō tracks every student's time at each belt against IBJJF minimums. No spreadsheet, no guessing, no awkward conversations about who should have been promoted six months ago.
+            A student asks if they're ready. You should have the answer immediately — not be reaching for a spreadsheet in front of your whole class. GymDō tracks every student's time at each belt automatically, measured against IBJJF minimums, updated every time they step on the mat.
           </p>
           <ul class="space-y-3 mb-8">
             {[
-              'IBJJF-aligned minimum time tracking',
+              'IBJJF-aligned minimum time tracking, automatic',
               'Stripe-by-stripe records from white to black',
               'Promotion history and coach notes logged forever',
-              'Belt distribution view across your whole academy',
+              'Clear view of who\'s ready, who\'s close, who needs time',
             ].map(item => (
               <li class="flex items-start gap-3 text-slate-300">
                 <span class="text-[#38bdf8] font-bold mt-0.5 flex-shrink-0">+</span>
@@ -287,7 +356,7 @@ const steps = [
             ))}
           </ul>
           <a href="/gymdo-website/features/belt-tracking" class="btn btn-primary btn-md">
-            Learn more
+            See belt tracking
           </a>
         </div>
 
@@ -382,17 +451,17 @@ const steps = [
         <div data-animate="fade-up">
           <span class="badge badge-teal mb-4">Member retention</span>
           <h2 class="text-4xl md:text-5xl font-black text-[#0c2d4e] mb-6">
-            Know who needs a check-in before they drift
+            Know who's about to leave — two weeks before they do
           </h2>
           <p class="text-slate-500 text-lg leading-relaxed mb-6">
-            GymDō tracks attendance patterns and flags members who are going quiet. A personal message from their coach at the right moment is worth more than any marketing campaign.
+            The average BJJ gym loses members quietly. They stop enjoying it. They get busy. They drift. Then one day they cancel — and you had no idea it was coming. GymDō tracks every member's attendance pattern daily and flags anyone going quiet, while there's still time to reach out.
           </p>
           <ul class="space-y-3 mb-8">
             {[
-              'Daily risk scores for every active member',
-              'Flags who needs attention this week',
-              'Attendance heatmaps per member (12 months)',
-              'Catch it early, before it becomes a cancellation',
+              'Daily risk score for every active member',
+              'Weekly digest: who needs a check-in this week',
+              'Attendance heatmaps — 12 months of history per member',
+              'One message at the right moment beats any marketing campaign',
             ].map(item => (
               <li class="flex items-start gap-3 text-slate-600">
                 <span class="text-[#0891b2] font-bold mt-0.5 flex-shrink-0">+</span>
@@ -401,7 +470,7 @@ const steps = [
             ))}
           </ul>
           <a href="/gymdo-website/features/retention" class="btn btn-primary btn-md">
-            Learn more
+            See retention tools
           </a>
         </div>
       </div>
@@ -414,9 +483,9 @@ const steps = [
       <div class="max-w-2xl mx-auto text-center mb-12" data-animate="fade-up">
         <span class="badge badge-navy mb-4">Why GymDō</span>
         <h2 class="text-4xl md:text-5xl font-black text-[#0c2d4e] mb-4">
-          Purpose-built for BJJ, not retrofitted
+          The only one built for BJJ
         </h2>
-        <p class="text-slate-500 text-lg">Other platforms were built for yoga studios. We built this for the mat.</p>
+        <p class="text-slate-500 text-lg">Every competitor started somewhere else. Yoga, CrossFit, personal training. We started on the mat.</p>
       </div>
 
       <div class="overflow-x-auto" data-animate="fade-up">
@@ -467,10 +536,10 @@ const steps = [
       <div class="max-w-2xl mx-auto text-center mb-12" data-animate="fade-up">
         <span class="badge badge-teal mb-4">Pricing</span>
         <h2 class="text-4xl md:text-5xl font-black text-[#0c2d4e] mb-4">
-          Flat pricing. No surprises.
+          Half the price of Mindbody.<br />Built for your sport.
         </h2>
         <p class="text-slate-500 text-lg">
-          One flat monthly fee that grows with your academy. Standard Stripe processing applies, same as any platform.
+          One flat monthly fee based on your member count. No platform percentage, no upsells, no lock-in.
         </p>
       </div>
 
@@ -494,7 +563,7 @@ const steps = [
       </div>
 
       <div class="text-center mt-8" data-animate="fade-up">
-        <p class="text-slate-400 text-sm mb-4">All plans include every feature. No upsells. No lock-in.</p>
+        <p class="text-slate-400 text-sm mb-4">Every plan includes every feature. No upsells. Cancel anytime.</p>
         <a href="/gymdo-website/pricing" class="btn btn-secondary btn-md">Full pricing details</a>
       </div>
     </div>
@@ -505,10 +574,10 @@ const steps = [
     <div class="absolute inset-0 opacity-[0.06]" style="background-image: radial-gradient(ellipse at 50% 100%, #22d3ee 0%, transparent 60%);" aria-hidden="true"></div>
     <div class="container relative text-center" data-animate="fade-up">
       <h2 class="text-4xl md:text-5xl font-black text-white mb-6 max-w-2xl mx-auto">
-        Ready to simplify how you run your academy?
+        The mat is calling. Stop letting admin answer it.
       </h2>
       <p class="text-slate-300 text-xl mb-10 max-w-xl mx-auto">
-        Start your 30-day free trial today. Full access, no credit card, and a personal walkthrough if you want one.
+        Start your 30-day free trial. No credit card, no setup fee, no lock-in. Or book a live walkthrough and we'll show you exactly how it works for your academy.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href={TRIAL_URL} class="btn btn-primary btn-lg">
